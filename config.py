@@ -1,4 +1,8 @@
+import os
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 class Config():
     SECRET_KEY = 'SAMPLE KEY'
-    SQLALCHEMY_DATABASE_URI = 'mysql://developer:password@localhost:3306/RescueEx'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
