@@ -1,6 +1,5 @@
 from flask import Blueprint
 
-WEBAPP =Blueprint(__name__, 'webapp', template_folder='templates',\
-                    static_url_path='/static', static_folder='static')
+WEBAPP = Blueprint(__name__, 'webapp', template_folder='templates')
 
 from . import routes
