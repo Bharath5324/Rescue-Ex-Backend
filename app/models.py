@@ -9,7 +9,6 @@ class Login(UserMixin, db.Model):
     name = db.Column(db.String(64))
     email = db.Column(db.String(128), index=True, unique=True)
     password_hash = db.Column(db.String(200))
-    role = db.Column(db.Boolean, nullable=False)
     institution = db.relationship('Institution', backref='login', lazy=True)
     user = db.relationship('User', backref='login', lazy=True)
     def __repr__(self):
@@ -37,6 +36,7 @@ class User(db.Model):
     url = db.Column(db.String(128), nullable=False)
     age = db.Column(db.Integer, nullable=False)
     group = db.Column(db.String(20), nullable=False)
+    tagid = db.Column(db.String(50), nullable=False)
 
 @login.user_loader
 def load_user(id):

@@ -11,23 +11,23 @@
     <meta name="robots" content="noindex">
 
     <!-- Perfect Scrollbar -->
-    <link type="text/css" href="../../assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='assets/vendor/perfect-scrollbar.css')}}" rel="stylesheet">
 
     <!-- App CSS -->
-    <link type="text/css" href="../../assets/css/app.css" rel="stylesheet">
-    <link type="text/css" href="../../assets/css/app.rtl.css" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='assets/css/app.css')}}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='assets/css/app.rtl.css')}}" rel="stylesheet">
 
     <!-- Material Design Icons -->
-    <link type="text/css" href="../../assets/css/vendor-material-icons.css" rel="stylesheet">
-    <link type="text/css" href="../../assets/css/vendor-material-icons.rtl.css" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='assets/css/vendor-material-icons.css')}}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='assets/css/vendor-material-icons.rtl.css')}}" rel="stylesheet">
 
     <!-- Font Awesome FREE Icons -->
-    <link type="text/css" href="../../assets/css/vendor-fontawesome-free.css" rel="stylesheet">
-    <link type="text/css" href="../../assets/css/vendor-fontawesome-free.rtl.css" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='assets/css/vendor-fontawesome-free.css')}}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='assets/css/vendor-fontawesome-free.rtl.css')}}" rel="stylesheet">
 
     <!-- ion Range Slider -->
-    <link type="text/css" href="../../assets/css/vendor-ion-rangeslider.css" rel="stylesheet">
-    <link type="text/css" href="../../assets/css/vendor-ion-rangeslider.rtl.css" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='assets/css/vendor-ion-rangeslider.css')}}" rel="stylesheet">
+    <link type="text/css" href="{{ url_for('static', filename='assets/css/vendor-ion-rangeslider.rtl.css')}}" rel="stylesheet">
 
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -81,67 +81,67 @@
 
 
     <!-- Modals -->
-    <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">User Name</h5><br>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <br>
-                <div class="row">
-                    <div class="col-sm-2">
-                        <h6 style="font-weight: bold;">Blood Group</h6>
-                    </div>
-                    <div class="col-sm-10">
-                        B+ve
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-2">
-                        <h6 style="font-weight: bold;">Emergency contacts</h6>
-                    </div>
-                    <div class="col-sm-10">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <h6>Contact 1</h6><br>
-                                123456789
-                            </div>
-                            <div class="col-sm-3">
-                                <h6>Contact 2</h6><br>
-                                1234567890
-                            </div>
-                            <div class="col-sm-3">
-                                <h6>Contact 3</h6><br>
-                                987654321
-                            </div>
-                            <div class="col-sm-3">
-                                <h6>Contact 4</h6><br>
-                                987654321
-                            </div>  
+        <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"></h5><br>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <h6 style="font-weight: bold;">Blood Group</h6>
+                        </div>
+                        <div class="col-sm-10">
+                            
                         </div>
                     </div>
-                  </div>
-                  <br>
-                  <div class="row">
-                    <div class="col-sm-2">
-                        <h6 style="font-weight: bold;">Medical History</h6>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <h6 style="font-weight: bold;">Emergency contacts</h6>
+                        </div>
+                        <div class="col-sm-10">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6>Contact 1</h6><br>
+                                    123456789
+                                </div>
+                                <div class="col-sm-3">
+                                    <h6>Contact 2</h6><br>
+                                    1234567890
+                                </div>
+                                <div class="col-sm-3">
+                                    <h6>Contact 3</h6><br>
+                                    987654321
+                                </div>
+                                <div class="col-sm-3">
+                                    <h6>Contact 4</h6><br>
+                                    987654321
+                                </div>  
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-10">
-                        <a class="btn btn-primary">View</a>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <h6 style="font-weight: bold;">Medical History</h6>
+                        </div>
+                        <div class="col-sm-10">
+                            <a class="btn btn-primary">View</a>
+                        </div>
                     </div>
-                   </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
-          </div>
         </div>
-    </div>
     <!-- Modals End -->
 
 
@@ -223,7 +223,7 @@
                                         <div class="dropdown-item d-flex py-2">
                                             <div class="mr-3">
                                                 <div class="avatar avatar-xs">
-                                                    <!-- <img src="../../assets/images/256_daniel-gaffey-1060698-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle"> -->
+                                                    <!-- <img src="{{ url_for('static', filename='assets/images/256_daniel-gaffey-1060698-unsplash.jpg')}}" alt="Avatar" class="avatar-img rounded-circle')}}"> -->
                                                 </div>
                                             </div>
                                             <div class="">
@@ -249,7 +249,7 @@
                                         <div class="dropdown-item d-flex py-2">
                                             <div class="mr-3">
                                                 <div class="avatar avatar-xs">
-                                                    <!-- <img src="../../assets/images/256_daniel-gaffey-1060698-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle"> -->
+                                                    <!-- <img src="{{ url_for('static', filename='assets/images/256_daniel-gaffey-1060698-unsplash.jpg')}}" alt="Avatar" class="avatar-img rounded-circle')}}"> -->
                                                 </div>
                                             </div>
                                             <div class="">
@@ -275,7 +275,7 @@
                                         <div class="dropdown-item d-flex py-2">
                                             <div class="mr-3">
                                                 <div class="avatar avatar-xs">
-                                                    <!-- <img src="../../assets/images/256_daniel-gaffey-1060698-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle"> -->
+                                                    <!-- <img src="{{ url_for('static', filename='assets/images/256_daniel-gaffey-1060698-unsplash.jpg')}}" alt="Avatar" class="avatar-img rounded-circle')}}"> -->
                                                 </div>
                                             </div>
                                             <div class="">
@@ -327,7 +327,7 @@
 
                         <div class="dropdown">
                             <a href="#account_menu" class="dropdown-toggle navbar-toggler navbar-toggler-dashboard border-left d-flex align-items-center ml-navbar" data-toggle="dropdown">
-                                <!-- <img src="../../assets/images/avatar/demi.png" class="rounded-circle" width="32" alt="Frontted"> -->
+                                <!-- <img src="{{ url_for('static', filename='assets/images/avatar/demi.png')}}" class="rounded-circle" width="32" alt="Frontted')}}"> -->
                                 <span class="ml-1 d-flex-inline">
                                     <span class="text-light">Institution Name</span>
                                 </span>
@@ -336,7 +336,7 @@
                                 <div class="dropdown-item d-flex align-items-center py-2 navbar-company-info py-3">
 
                                     <span class="mr-3">
-                                        <img src="../../assets/images/frontted-logo-blue.svg" width="43" height="43" alt="avatar">
+                                        <img src="{{ url_for('static', filename='assets/images/frontted-logo-blue.svg')}}" width="43" height="43" alt="avatar">
                                     </span>
                                     <span class="flex d-flex flex-column">
                                         <strong class="h5 m-0">Institute name</strong>
@@ -494,6 +494,7 @@
                                 <a href="#" class="text-dark mb-2">
                                     <strong>ID</strong>
                                 </a>
+                                <p class="text-muted">{{institute.id}}</p>
                                 <!-- <p class="text-muted">Become a SCRUM master in scheduling tasks.</p> -->
 
                                 <div class="d-flex justify-content-between align-items-center">
@@ -522,7 +523,7 @@
                                 <a href="#" class="text-dark mb-2">
                                     <strong>Name</strong>
                                 </a>
-                                <p class="text-muted">XYZ Hospital</p> 
+                                <p class="text-muted">{{institute.login.name}}</p> 
 
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
@@ -550,7 +551,7 @@
                                 <a href="#" class="text-dark mb-2">
                                     <strong>Email id</strong>
                                 </a>
-                                <p class="text-muted">xyzkz@gmail.com</p>
+                                <p class="text-muted">{{institute.login.email}}</p>
 
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
@@ -579,7 +580,7 @@
                                 <a href="#" class="text-dark mb-2">
                                     <strong>Scanner ID</strong>
                                 </a>
-                                <p class="text-muted">2602000</p>
+                                <p class="text-muted">{{institute.scanner_id}}</p>
 
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
@@ -600,8 +601,7 @@
 
                         <div class="card">
                             <!-- <div class="card-header card-header-large bg-light d-flex align-items-center">
-                                <div class="flex">
-                                    <!-- <h4 class="card-header__title">In Progress</h4> -->
+                                <div class="flex"> <h4 class="card-header__title">In Progress</h4> -->
                                     <!-- <div class="card-subtitle text-muted">Recent Courses</div> -->
                                 <!-- </div>
                                 <div class="ml-auto"> -->
@@ -645,7 +645,7 @@
                                 <!-- <li class="list-group-item" style="z-index: initial;">
                                     <div class="d-flex align-items-center">
                                         <a href="#" class="mr-3">
-                                            <!-- <img src="../../assets/images/logos/vuejs.svg" alt="course" class=""> -->
+                                            <img src="{{ url_for('static', filename='assets/images/logos/vuejs.svg')}}" alt="course" class=""> -->
 
                                         </a>
                                         <!-- <div class="flex">
@@ -673,7 +673,7 @@
                                 <!-- <li class="list-group-item" style="z-index: initial;">
                                     <div class="d-flex align-items-center">
                                         <a href="#" class="mr-3">
-                                            <img src="../../assets/images/logos/angular.svg" alt="course" class=""> -->
+                                            <img src="{{ url_for('static', filename='assets/images/logos/angular.svg')}}" alt="course" class=""> -->
 
                                         </a>
                                         <!-- <div class="flex">
@@ -701,7 +701,7 @@
                                 <!-- <li class="list-group-item" style="z-index: initial;">
                                     <div class="d-flex align-items-center">
                                         <a href="#" class="mr-3">
-                                             <img src="../../assets/images/logos/javascript.svg" alt="course" class=""> -->
+                                             <img src="{{ url_for('static', filename='assets/images/logos/javascript.svg')}}" alt="course" class=""> -->
 
                                         </a>
                                         <!-- <div class="flex">
@@ -846,7 +846,7 @@
                             <div class=" d-flex justify-content-center">
                                 <a class="" href="#">
 
-                                    <!-- <img src="../../assets/images/logos/vuejs.svg" class="mb-1" style="width:80px;" alt="logo" class="rounded"> -->
+                                    <!-- <img src="{{ url_for('static', filename='assets/images/logos/vuejs.svg')}}" class="mb-1" style="width:80px;" alt="logo" class="rounded"> -->
                                     <!-- <img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=clamp&w=800&h=250" style="width:100%" alt="Social Media"> -->
 
 
@@ -888,64 +888,24 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
+                              <!-- <tr>
                                     <th scope="row">1</th>
                                     <td>-</td>
                                     <td>-</td>
                                     <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">More Info</button></td>
-                              </tr>
+                              </tr> -->
+                              {% if dashdat.size != 0 %}
+                              {% for i in dashdat.index %}
                               <tr>
-                                <th scope="row">2</th>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
+                                <th scope="row">1</th>
+                                <td>{{ dashdat.loc[i, "chipid"] }}</td>
+                                <td>{{ dashdat.loc[i, "timestamp"] }}</td>
+                                <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal{{ dashdat.loc[i, 'chipid'] }}">More Info</button></td>
                               </tr>
-                              <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">-</td>
-                                <td>-</td>
-                                <td>-</td>
-                              </tr>
+                              {% endfor %}
+                              {% endif %}
                             </tbody>
                           </table>
-                          <!-- <div id="myModal" class="modal">
-
-                            <div class="modal-content">
-                              <span class="close">&times;</span>
-                              <p>Name</p>
-                              <p>Emergency Contact 1</p>
-                            </div>
-                          
-                          </div>
-                          <script>
-                            // Get the modal
-                            var modal = document.getElementById("myModal");
-                            
-                            // Get the button that opens the modal
-                            var btn = document.getElementById("myBtn");
-                            
-                            // Get the <span> element that closes the modal
-                            var span = document.getElementsByClassName("close")[0];
-                            
-                            // When the user clicks the button, open the modal 
-                            btn.onclick = function() {
-                              modal.style.display = "block";
-                            }
-                            
-                            // When the user clicks on <span> (x), close the modal
-                            span.onclick = function() {
-                              modal.style.display = "none";
-                            }
-                            
-                            // When the user clicks anywhere outside of the modal, close it
-                            window.onclick = function(event) {
-                              if (event.target == modal) {
-                                modal.style.display = "none";
-                              }
-                            }
-                            </script> -->
-                        
-                        <!-- END ACTIVITY -->
                     </div>
                 </div>
 
@@ -1589,15 +1549,15 @@
                                 <div class="avatar-group mt-2">
 
                                     <div class="avatar avatar-xs">
-                                        <!-- <img src="../../assets/images/256_joao-silas-636453-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle"> -->
+                                        <!-- <img src="{{ url_for('static', filename='assets/images/256_joao-silas-636453-unsplash.jpg')}}" alt="Avatar" class="avatar-img rounded-circle"> -->
                                     </div>
 
                                     <div class="avatar avatar-xs">
-                                        <img src="../../assets/images/256_jeremy-banks-798787-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle">
+                                        <img src="{{ url_for('static', filename='assets/images/256_jeremy-banks-798787-unsplash.jpg')}}" alt="Avatar" class="avatar-img rounded-circle">
                                     </div>
 
                                     <div class="avatar avatar-xs">
-                                        <!-- <img src="../../assets/images/256_daniel-gaffey-1060698-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle"> -->
+                                        <!-- <img src="{{ url_for('static', filename='assets/images/256_daniel-gaffey-1060698-unsplash.jpg')}}" alt="Avatar" class="avatar-img rounded-circle"> -->
                                     </div>
 
                                 </div>
@@ -1659,19 +1619,19 @@
                                 <div class="avatar-group mt-2">
 
                                     <div class="avatar avatar-xs">
-                                        <!-- <img src="../../assets/images/256_rsz_1andy-lee-642320-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle"> -->
+                                        <!-- <img src="{{ url_for('static', filename='assets/images/256_rsz_1andy-lee-642320-unsplash.jpg')}}" alt="Avatar" class="avatar-img rounded-circle"> -->
                                     </div>
 
                                     <div class="avatar avatar-xs">
-                                        <!-- <img src="../../assets/images/256_michael-dam-258165-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle"> -->
+                                        <!-- <img src="{{ url_for('static', filename='assets/images/256_michael-dam-258165-unsplash.jpg')}}" alt="Avatar" class="avatar-img rounded-circle"> -->
                                     </div>
 
                                     <div class="avatar avatar-xs">
-                                        <!-- <img src="../../assets/images/256_luke-porter-261779-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle"> -->
+                                        <!-- <img src="{{ url_for('static', filename='assets/images/256_luke-porter-261779-unsplash.jpg')}}" alt="Avatar" class="avatar-img rounded-circle"> -->
                                     </div>
 
                                     <div class="avatar avatar-xs">
-                                        <!-- <img src="../../assets/images/stories/256_rsz_clem-onojeghuo-193397-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle"> -->
+                                        <!-- <img src="{{ url_for('static', filename='assets/images/stories/256_rsz_clem-onojeghuo-193397-unsplash.jpg')}}" alt="Avatar" class="avatar-img rounded-circle"> -->
                                     </div>
 
                                 </div>
@@ -1704,7 +1664,7 @@
 
 
                                 <div class="avatar avatar-xs">
-                                    <!-- <img src="../../assets/images/256_michael-dam-258165-unsplash.jpg" alt="Avatar" class="avatar-img rounded-circle"> -->
+                                    <!-- <img src="{{ url_for('static', filename='assets/images/256_michael-dam-258165-unsplash.jpg')}}" alt="Avatar" class="avatar-img rounded-circle"> -->
                                 </div>
 
 
@@ -1727,34 +1687,34 @@
     }"></app-settings>
     </div>
     <!-- jQuery -->
-    <script src="../../assets/vendor/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/jquery.min.js')}}"></script>
 
     <!-- Bootstrap -->
-    <script src="../../assets/vendor/popper.min.js"></script>
-    <script src="../../assets/vendor/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/bootstrap.min.js')}}"></script>
 
     <!-- Perfect Scrollbar -->
-    <script src="../../assets/vendor/perfect-scrollbar.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/perfect-scrollbar.min.js')}}"></script>
 
     <!-- DOM Factory -->
-    <script src="../../assets/vendor/dom-factory.js"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/dom-factory.js')}}"></script>
 
     <!-- MDK -->
-    <script src="../../assets/vendor/material-design-kit.js"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/material-design-kit.js')}}"></script>
 
     <!-- Range Slider -->
-    <script src="../../assets/vendor/ion.rangeSlider.min.js"></script>
-    <script src="../../assets/js/ion-rangeslider.js"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/ion.rangeSlider.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/ion-rangeslider.js')}}"></script>
 
     <!-- App -->
-    <script src="../../assets/js/toggle-check-all.js"></script>
-    <script src="../../assets/js/check-selected-row.js"></script>
-    <script src="../../assets/js/dropdown.js"></script>
-    <script src="../../assets/js/sidebar-mini.js"></script>
-    <script src="../../assets/js/app.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/toggle-check-all.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/check-selected-row.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/dropdown.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/sidebar-mini.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/app.js')}}"></script>
 
     <!-- App Settings (safe to remove) -->
-    <script src="../../assets/js/app-settings.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/app-settings.js')}}"></script>
 
 
 

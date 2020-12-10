@@ -2,10 +2,10 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, IntegerField, SubmitField, BooleanField, PasswordField
 from wtforms.validators import DataRequired
 from wtforms.fields.html5 import EmailField
-class UserLoginForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired()])
+class LoginForm(FlaskForm):
+    email = EmailField('Email', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
-    rememberme = BooleanField('rememmberme')
+    rememberme = BooleanField('Remember Me')
     submit = SubmitField('SignIn')
 
 class InstituteSignupForm(FlaskForm):
