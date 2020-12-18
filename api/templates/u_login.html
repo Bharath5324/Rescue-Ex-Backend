@@ -39,21 +39,21 @@
     <div class="layout-login-centered-boxed__form">
         <div class="d-flex flex-column justify-content-center align-items-center mt-2 mb-4 navbar-light">
         </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
 
         <div class="card card-body">
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                {{ message }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}    
-            <form method="post">
+            <form method="post" >
                 {{form.hidden_tag()}}
                 <div class="form-group">
                     <label class="text-label" for="email_2">{{form.email.label}}</label>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="form-group text-center mb-0">
-                    Don't have an account? <a class="text-underline" href="{{url_for('webapp.signup')}}">Sign up</a>
+                    Don't have an account? <a class="text-underline" href="{{ url_for('api.signin') }}">Sign up</a>
                 </div>
             </form>
         </div>

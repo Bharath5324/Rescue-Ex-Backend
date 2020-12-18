@@ -43,17 +43,25 @@ def load_user(id):
     return Login.query.get(int(id))
 
 def signup_user(form):
-    new_login = Login(name=form.name.data, email=form.email.data, role=False)
+    new_login = Login(name=form.name.data, email=form.email.data)
     new_login.set_password(form.password.data)
     db.session.add(new_login)
-    new_user = User(login_id=new_login.id, contact1=form.contact1.data, contact2=form.contact2.data, contact3=form.contact3.data, contact4=form.contact4.data, url=form.url.data, age=form.age.data, group=form.group.data)
+    db.session.commit()
+    new_user = User(login_id=new_login.id, contact1=form.contact1.data, contact2=form.contact2.data, contact3=form.contact3.data, contact4=form.contact4.data, url=form.url.data, age=form.age.data, group=form.group.data, tagid=form.tagid.data)
     db.session.add(new_user)
     db.session.commit()
 
 def signup_institute(form):
-    new_login = Login(name=form.name.data, email=form.email.data, role=True)
+    new_login = Login(name=form.name.data, email=form.email.data)
     new_login.set_password(form.password.data)
     db.session.add(new_login)
+    db.session.commit()
     new_user = Institution(login_id=new_login.id, scanner_id=form.scanner_id.data, kind=form.kind.data)
     db.session.add(new_user)
     db.session.commit()
+
+def user_tag(tag_id):
+    return User.query.filter_by(tagid=tag_id).first()
+
+def instit_scan(scan_id):
+    return Institution.query.filter_by(scanner_id=scan_id).first()

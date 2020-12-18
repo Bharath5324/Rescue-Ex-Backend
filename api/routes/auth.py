@@ -1,46 +1,47 @@
 from functools import wraps
-from webapp import WEBAPP
-from flask import redirect, url_for, render_template, request, flash
-from flask_login import login_required, current_user, login_user, logout_user
-from app.models import Institution, Login, signup_institute
-from app.forms import LoginForm, InstituteSignupForm
-@WEBAPP.route('/login', methods=['GET', 'POST'])
+from api import API_APP
+from app.forms import LoginForm, UserSignupForm
+from app.models import User, Login
+from flask import redirect, url_for, flash, render_template
+from flask_login import current_user, login_user, login_required
+from app.models import signup_user
+@API_APP.route('/login', methods=['GET', 'POST'])
 def signin():
     if current_user.is_authenticated:
         return redirect(url_for('webapp.index'))
     form = LoginForm()
     if form.validate_on_submit():
-        # print(form)
+        print(form)
         login = Login.query.filter_by(email=form.email.data).first()
-        # user = Institution.query.filter_by(login_id=login.id).first()
         if login is None or not login.check_password(form.password.data):
             flash('invalid username/password')
-            return redirect(url_for('webapp.signin'))
+            return redirect(url_for('api.signin'))
+        user = User.query.filter_by(login_id=login.id).first()
+        if user is None:
+            flash('invalid username/password')
+            return redirect(url_for('api.signin'))
         login_user(login, remember=form.rememberme.data)
         return redirect(url_for('webapp.index'))
-    return render_template('login.html', form=form)
+    return render_template('u_login.html', form=form)
 
-@WEBAPP.route('/logout')
-def signout():
-    logout_user()
-    return redirect(url_for('webapp.index'))
 
-@WEBAPP.route('/register', methods=['GET', 'POST'])
+@API_APP.route('/register', methods=['GET', 'POST'])
 def signup():
     if current_user.is_authenticated:
         return redirect(url_for('webapp.dashboard'))
-    form = InstituteSignupForm()
+    form = UserSignupForm()
     if form.validate_on_submit():
         print(form)
-        signup_institute(form)
+        signup_user(form)
         flash("You have sucessfully registered", 'Success')
-        return redirect(url_for('webapp.signin'))
-    return render_template("signup.html", form=form)
+        return redirect(url_for('api.signin'))
+    return render_template("u_signup.html", form=form)
+
 def authorization_required(func):
     @wraps(func)    
     @login_required
     def inner(*args, **kwargs):
-        if not Institution.query.filter_by(login_id=2):
+        if not User.query.filter_by(login_id=2):
             return redirect(url_for('webapp.index'))
         return func(*args, **kwargs)
     return inner
